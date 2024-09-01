@@ -1,0 +1,128 @@
+program{
+    
+DibujarBanda(6,5,Negro)
+    
+    
+}
+//ejercicio 2
+procedure  Mover_SegunColor_(direccion,color){
+    /*
+        Proposito: Mover el cabezal tantas celdas como cantidad de bolitas de color **color** haya en la celda actual
+        Precondicion:ninguna
+        Parametros:**direccion** direccion - es la direccion a donde se tiene que mover el cabezal
+    */
+    repeat(nroBolitas(color)){
+        Mover(direccion)
+    }
+}
+//Ejercicio 6 BIBLIOTECA
+procedure SacarTodasLasDeColor_(colorASacar){
+     /*
+        Proposito: Sacar todas las bolitas de color **colorASacar** de la celda actual
+        Precondicion:ninguna
+        Parametros:**colorASacar** color - es el color del cual se van sacar las bolitas
+    */
+    Sacar_DeColor_(nroBolitas(colorASacar), colorASacar)
+}
+
+//Ejercicio 7 BIBLIOTECA        
+procedure VaciarCelda(){
+    /*
+        Proposito: Sacar todas las bolitas de color **colorASacar** de la celda actual
+        Precondicion:ninguna
+        Parametros:**colorASacar** color - es el color del cual se van sacar las bolitas
+    */
+    SacarTodasLasDeColor_(Azul)
+    SacarTodasLasDeColor_(Negro)
+    SacarTodasLasDeColor_(Verde)
+    SacarTodasLasDeColor_(Rojo)
+}
+-------------------------------------EL BOSQUE PARTE 3--------------------------------------------
+procedure Poner_SemillasAl_(cantidadDeSemillas, direccionAPoner){
+    /* deja el cabezal en la celda inicial
+        Proposito:Poner **cantidadDeSemillas** semillas en la celda hacia el **direccionAPoner** de la celda actual
+        Precondicion:Debe haber al meno 1 celda hacia el **direccionAPoner** de la celda actual
+        Parametros:
+        **cantidadDeSemillas** numero -Es la cantidad de semillas que va a poner en la celda 
+        **direccionAPoner** direccion- Es la direcccion a la cual se va a mover el cabezal
+    */
+    Mover(direccionAPoner)
+    Poner_Semillas(cantidadDeSemillas)
+    Mover(opuesto(direccionAPoner))
+
+}
+procedure Sacar_ArbolesAl_(cantidadDeArboles, direccionASacar){
+    /* deja el cabezal en la celda inicial
+      Proposito: Sacar **cantidadDeArboles** Arboles de la parcela en direccion al **direccionASacar**
+                 de la parcela actual  
+      Precondicion:Debe haber al menos 1 parcela en direccion hacia el **direccionASacar** y al menos 
+                   **cantidadDeArboles** arboles en la parcela
+      Parametros:**cantidadDeArboles*** : numero - Es la cantidad de arboles que se va a sacar
+                 **direccionASacar**: direccion - Es la direccion a donde se va a mover para sacar arboles de la parcela  
+    */
+    Mover(direccionASacar)
+    Sacar_Arboles(cantidadDeArboles)
+    Mover(opuesto(direccionASacar))
+}
+procedure Sacar_SemillasEnDiagonalAl_Y_(cantidadDeSemillas, primeraDirDiagonal, segundaDirDiagonal){
+    /* deja el cabezal en la celda inicial
+      Proposito: Sacar ***cantidadDeSemillas** semillas de la parcela en direccion
+      Precondicion: Debe Haber al menos 1 parcela en direccion hacia el **primeraDirDiagonal** y 1 parcela en direccion **segundaDirDiagonal**
+      Parametros:**cantidadDeSemillas**: numero - Es la cantidad de semillas a sacar
+      **primeraDirDiagonal**, **segundaDirDiagonal**: direcciones - Son la direcciones en las que se tiene que mover el cabezal
+    */
+    Mover(primeraDirDiagonal)
+    Mover(segundaDirDiagonal)
+    Sacar_Semillas(cantidadDeSemillas)
+    Mover(opuesto(primeraDirDiagonal))
+    Mover(opuesto(segundaDirDiagonal))
+    }
+procedure Sacar_ArbolesEnDiagonalHorariaAl_( cantidadDeArboles,direccionDiagonal){
+    /* la diagonal horaria de una dirección es aquella dada por la dirección y su dirección siguiente.
+    / Ej. la diagonal horaria de Norte es Norte-Este, la de Sur es Sur-Oeste.
+    / deja el cabezal en la celda inicial
+      Proposito:
+      Precondicion:Debe haber al menos 1 celda en direccion **direccionDiagonal** y 1 celda 
+      en direccion hacia **siguiente(direccionDiagonal)**
+      Debe haber al menos **cantidadDeArboles** arboles en la celda actual
+      Parametros:**cantidadDeArboles** : numero - Es la cantidad de arboles que se van sacar
+      **direccionDiagonal** direccion: Es la direcion a donde se va a mover el cabezal en diagonal
+    */
+    Mover(direccionDiagonal)
+    Mover(siguiente(direccionDiagonal))
+    Sacar_Arboles(cantidadDeArboles)
+    Mover(opuesto(direccionDiagonal))
+    Mover(previo(direccionDiagonal))
+
+}
+--------------------------------------------------------------------
+
+//Ejercicio 5
+
+
+procedure DibujarBanda(ancho,alto,colorDeLaBanda){
+    repeat(alto){
+        DibujarDiagonal(ancho,colorDeLaBanda)
+        MoverSigFila(ancho)
+    }
+    IrAEsquinaAl_Y_(Sur,Oeste) 
+}
+procedure MoverSigFila(ancho){
+     Mover_VecesAl_(ancho-1, Oeste)
+      Mover_VecesAl_(ancho-1, Sur)
+      Mover(Norte)
+}
+procedure DibujarDiagonal(ancho,colorDeLaBanda){
+    repeat(ancho-1){
+        Poner(colorDeLaBanda)
+        MoverseEnDiagonal()
+    }    
+    Poner(colorDeLaBanda)
+    
+}
+procedure MoverseEnDiagonal(){
+    Mover(Este)
+    Mover(Norte)
+}
+
+

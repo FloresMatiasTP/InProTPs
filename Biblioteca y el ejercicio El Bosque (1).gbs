@@ -1,0 +1,266 @@
+program{
+Sacar_ArbolesEnDiagonalHorariaAl_( 2,Norte)    
+    
+    
+}
+//TP 2
+procedure PonerUnaDeCada(){
+    //Proposito : Poner una bolita de cada color en la celda actual
+    Poner(Azul)
+    Poner(Negro)
+    Poner(Rojo)
+    Poner(Verde)
+}
+//Tp 4
+//Ejercicio 3 T
+procedure PonerAl_(colorAPoner, direccionDondePoner){
+    /*Proposito: Poner una bolita de color **colorAPoner** en la celda en direccion 
+                 **direccionDondePoner** de la celda actual y dejar el cabezal en esa direccion
+    Precondicion:Debe existir una celda lindante hacia la direccion
+                 **direcciónDondePoner** de la celda actual
+                 
+    Parametros:**colorAPoner** Es el color del cual se va a poner la bolita
+               **direccionDondePoner** es la direccion en donde se va a mover el cabezal
+    */
+    Mover(direccionDondePoner)
+    Poner(colorAPoner)
+}
+//Ejercicio 4
+procedure ReemplazarUnaDe_Por_(colorAReemplazar, colorPorElCualReemplazar){
+    /*
+      Proposito:Reemplazar una bolita de color **colorAReemplazar** por 
+                bolita de color **colorPorELCualReemplazar**
+      Precondicion:Debe haber una bolita de color **colorAReemplazar** en la celda actual
+      Parametros: **colorAReemplazar**
+      **colorPorElCualReemplazar**
+    */
+    Sacar(coloraReemplazar)
+    Poner(colorPorElCualReemplazar)
+}
+//Ejercicio 9
+procedure Poner_DeColor_(cantidadAPoner, colorAPoner){
+    /*
+    Propósito:Poner **cantidadAPoner** bolitas de color **colorAPoner** en la celda actual
+    Precondicion:Ninguna
+    Parametros:**cantidadAPoner** Es la cantidad totoal de cuantas bolitas rojas va a poner en la celda actual
+               **colorAPoner** Color del cual se va a poner la bolita en la celda actual    
+    */
+    repeat(cantidadAPoner){
+        Poner(colorAPoner)
+    }
+}
+//Ejercicio 10
+procedure Mover_VecesAl_(cantidadAMover, direccionAMover){
+    /*
+    Propósito:Mover el cabezal **cantidadAMover** celdas hacia la direccion **direccionAMover** de la celda actual
+    Precondicion:Debe existir al menos **cantidadAMover** celdas hacia la direcccion **direccionAMover** de la celda actual
+    Parametros:**cantidadAMover** Es la cantidad totoal de cuantas bolitas rojas va a poner en la celda actual
+               **direccionAMover** Direccion a la cual se va a mover el cabezal    
+    */
+    repeat(cantidadAMover){
+        Mover(direccionAMover)
+    }
+}
+//Ejercicio 11
+procedure  Sacar_DeColor_(cantidadASacar, colorASacar){
+      /*
+    Propósito: Sacar todas las bolitas como **cantidadASacar** del color **colorASacar** haya en la celda actual
+    Precondicion:Debe existir al menos al menos una bolita del color **colorASacar** en la celda actual
+    Parametros:**cantidadASacar** Es la cantidad total de bolitas que se van a sacar 
+               **colorASacar** Color de la bolita del cual se va a sacar
+    */
+    repeat(cantidadaSacar){
+        Sacar(colorASacar)
+    }
+}
+//Ejercicio 12
+procedure IrAEsquinaAl_Y_(primeraDirección,segundaDirección) {
+    /*
+      Proposito: Mover el cabezal hacia una esquina del tablero indicado por la direcciones
+                que se le van a pasar
+      Precondicion:Las direcciones dadas no tien que ser opuestas ni iguales
+      Parametros:**primeraDirección** y **segundaDirección** Es la direccion a donde 
+                 se va a mover el cabezal
+    */
+    IrAlBorde(primeraDirección)
+    IrAlBorde(segundaDirección)
+}
+//---------------------El Bosque------------------------------------
+//
+
+procedure PonerUnaSemilla(){
+    /* 
+     Proposito:Poner una bolita de Rojo color en la celda Actual
+     Precondicion:Ninguna
+    */
+    Poner(Rojo)
+}
+procedure PonerUnArbol(){
+    /* 
+     Proposito:Poner una bolita de color Verde en la celda Actual
+     Precondicion:Ninguna
+    */
+    Poner(Verde)
+}
+
+procedure PonerUnaBomba(){
+    /* 
+     Proposito:Poner una bolita de color Negro en la celda Actual
+     Precondicion:Ninguna
+    */
+    Poner(Negro)
+}
+procedure PonerUnNutriente(){
+    /* 
+     Proposito: Poner una bolita de color Azul en la celda Actual
+     Precondicion:Ninguna
+    */
+    Poner(Azul)
+}
+procedure SacarUnaSemilla(){
+    /* 
+     Proposito:Sacar una bolita de color Rojo de la celda actual
+     Precondicion:Debe haber al menos una bolita de color rojo en la celda actual
+    */
+    Sacar(Rojo)
+}
+procedure SacarUnArbol(){
+    /* 
+     Proposito: Sacar una bolita de color verde de la celda actual
+     Precondicion:Debe haber al menos una bolita de color Verde en la celda actual
+    */
+    Sacar(Verde)
+}
+procedure SacarUnaBomba(){
+    /* 
+     Proposito:Sacar una bolita de color Negro  de la celda actual
+     Precondicion:Debe haber al menos una bolita de color Negro en la celda actual
+    */
+    Sacar(Negro)
+}
+procedure SacarUnNutriente(){
+    /* 
+     Proposito:Sacar una bolita de color Azul de la celda actual
+     Precondicion:Debe haber al menos una bolita de color Azul en la celda actual
+    */
+    Sacar(Azul)
+}
+---------------------------El Bosque Parte 2-----------------------------------------
+procedure Poner_Semillas(cantidadDeSemillasAPoner){
+    /*
+     Proposito: Poner en la parcela actual **cantidadDeSemillasAPoner** semillas
+     Precondicion:ninguna
+     Parametros:**cantidadDeSemillasAPoner** es un numero y define la cantidad de semillas que se van a poner
+    */
+    repeat(cantidadDeSemillasAPoner){
+        PonerUnaSemilla()
+    }
+}
+ procedure Sacar_Semillas(cantidadDeSemillasASacar){
+     /*
+     Proposito:Sacar **cantidadDeSemillasASacar** semillas de la parcela actual
+     Precondicion:Deber haber al menos **cantidadDeSemillasASacar**  semillas en la parcela actual
+     Parametros:**cantidadDeSemillasASacar**
+    */
+    repeat(cantidadDeSemillasASacar){
+        SacarUnaSemilla()    
+    }
+ }
+ procedure Poner_Arboles(cantidadDeArbolesAPoner){
+     /*
+     Proposito: Poner **cantidadDeÁrbolesAPoner** arboles en la parcela actual
+     Precondicion: ninguna
+     Parametros:**cantidadDeÁrbolesAPoner** es un nuero y es la cantidad de arboles que se van a poner en la parcela actual
+    */
+    repeat(cantidadDeÁrbolesAPoner){
+        PonerUnArbol()
+    }
+ }
+ procedure Sacar_Arboles(cantidadDeArbolesASacar){
+     /*
+     Proposito: Sacar **cantidadDeÁrbolesASacar** arboles de la parcela actual
+     Precondicion: Debe existir al menos **cantidadDeÁrbolesASacar** de arboles en la parcela actual
+     Parametros:**cantidadDeÁrbolesASacar** es un numero y es la cantidad de arboles a sacar
+    */
+     repeat(cantidadDeArbolesASacar){
+         SacarUnArbol()
+     }
+ }
+procedure Poner_Nutrientes(cantidadDeNutrientesAPoner){
+    /*
+     Proposito:Poner **cantidadDeNutrientesAPoner** nutrientes en la parcela actual
+     Precondicion:ninguna
+     Parametros:**cantidadDeNutrientesAPoner** es la cantidad de nutrientes a poner 
+    */
+    repeat(cantidadDeNutrientesAPoner){
+        PonerUnNutriente()
+    }
+}
+procedure Sacar_Nutrientes(cantidadDeNutrientesASacar) {
+    /*
+     Proposito: Poner **cantidadDeNutrientesASacar** en la parcela actual
+     Precondicion:Debe haber al menos **cantidadDeNutrientesASacar** nutrientes en la parcela actual
+     Parametros:**cantidadDeNutrientesASacar** es la cantidad e nutrientes que se va a sacr de la parcela acutal
+    */
+    repeat(cantidadDeNutrientesASacar){
+        SacarUnNutriente()
+    }
+}
+
+
+-------------------------------------EL BOSQUE PARTE 3--------------------------------------------
+procedure Poner_SemillasAl_(cantidadDeSemillas, direccionAPoner){
+    /* deja el cabezal en la celda inicial
+        Proposito:
+        Precondicion:
+        Parametros:
+    */
+    Mover(direccionAPoner)
+    Poner_Semillas(cantidadDeSemillas)
+    Mover(opuesto(direccionAPoner))
+
+}
+procedure Sacar_ArbolesAl_(cantidadDeArboles, direccionASacar){
+    /* deja el cabezal en la celda inicial
+      Proposito:
+      Precondicion:
+      Parametros:
+    */
+    Mover(direccionASacar)
+    Sacar_Arboles(cantidadDeArboles)
+    Mover(opuesto(direccionASacar))
+}
+procedure Sacar_SemillasEnDiagonalAl_Y_(cantidadDeSemillas, primeraDirDiagonal, segundaDirDiagonal){
+    /* deja el cabezal en la celda inicial
+      Proposito:
+      Precondicion:
+      Parametros:
+    */
+    Mover(primeraDirDiagonal)
+    Mover(segundaDirDiagonal)
+    Sacar_Semillas(cantidadDeSemillas)
+    Mover(opuesto(primeraDirDiagonal))
+    Mover(opuesto(segundaDirDiagonal))
+    }
+procedure Sacar_ArbolesEnDiagonalHorariaAl_( cantidadDeArboles,direccionDiagonal){
+    /* la diagonal horaria de una dirección es aquella dada por la dirección y su dirección siguiente.
+    / Ej. la diagonal horaria de Norte es Norte-Este, la de Sur es Sur-Oeste.
+    / deja el cabezal en la celda inicial
+      Proposito:
+      Precondicion:Debe haber al menos 1 celda en direccion **direccionDiagonal** y 1 celda 
+      en direccion hacia **siguiente(direccionDiagonal)**
+      Debe haber al menos **cantidadDeArboles** arboles en la celda actual
+      Parametros:**cantidadDeArboles** : numero - Es la cantidad de arboles que se van sacar
+      **direccionDiagonal** direccion: Es la direcion a donde se va a mover el cabezal en diagonal
+    */
+    Mover(direccionDiagonal)
+    Mover(siguiente(direccionDiagonal))
+    Sacar_Arboles(cantidadDeArboles)
+    Mover(opuesto(direccionDiagonal))
+    Mover(previo(direccionDiagonal))
+
+}
+
+
+
+

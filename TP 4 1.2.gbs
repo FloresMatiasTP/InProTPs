@@ -1,0 +1,338 @@
+program{
+//DibujarBandaDeLargo_YAncho_DeColor_(4, 5, Rojo)
+  DibujarColumna_De_(Rojo, 3)  
+    
+    
+}
+// Ejercicio 1
+procedure Mover3VecesAl_(direccionAMover){
+    /*Proposito: Mover el cabezal 3 celdas hacia 
+    **direccionAMover**
+    Precondicion: Debe haber al menos 3 celdas hacia
+    **direccionAMover** 
+    Parametros: *direccionAMover* La direccion a donde se 
+    tiene que mover el cabezal
+    */
+    repeat(3){
+        Mover(direccionAMover)
+    }
+}
+//Ejercicio 2
+procedure Poner6DeColor_(colorAPoner){
+    /*Proposito: Poner 6 bolitas de color *colorAPoner* en 
+                 la celda actual
+    Precondicion:Ninguna
+    Parametros: *colorAPoner* Color de la bolita que se va
+                a poner en la celda actual
+    */
+    repeat(6){
+        Poner(colorAPoner)
+    }
+}
+//Ejercicio 3
+procedure PonerAl_(colorAPoner, direccionDondePoner){
+    /*Proposito: Poner una bolita de color **colorAPoner** en la celda en direccion 
+                 **direccionDondePoner** de la celda actual y dejar el cabezal en esa direccion
+    Precondicion:Debe existir una celda lindante hacia la direccion
+                 **direcciónDondePoner** de la celda actual
+                 
+    Parametros:**colorAPoner** Es el color del cual se va a poner la bolita
+               **direccionDondePoner** es la direccion en donde se va a mover el cabezal
+    */
+    Mover(direccionDondePoner)
+    Poner(colorAPoner)
+}
+//Ejercicio 4
+procedure ReemplazarUnaDe_Por_(colorAReemplazar, colorPorElCualReemplazar){
+    /*
+      Proposito:Reemplazar una bolita de color **colorAReemplazar** por 
+                bolita de color **colorPorELCualReemplazar**
+      Precondicion:Debe haber una bolita de color **colorAReemplazar** en la celda actual
+      Parametros: **colorAReemplazar**
+      **colorPorElCualReemplazar**
+    */
+    Sacar(coloraReemplazar)
+    Poner(colorPorElCualReemplazar)
+}
+//Ejercicio 5
+procedure Poner_ADistancia3Al_(colorAPoner, direccionAMover) {
+    /*
+    Proposito:Poner una bolita de color **color** a 3 celdas de distancia hacia **direccionAMover** 
+              del cabezal actual
+    Precondicion: Debe haber al menos 3 celdas hacia la direccion **direccionAMover** de la celda actual
+    Parametros: **colorAPoner** Color del cual se va a poner la bolita
+    **direccionAMover** Direccion a la cual se va a mover el cabezal
+    */
+    Mover3VecesAl_(direccionAMover)
+    Poner(colorAPoner) 
+}
+//Ejercicio 6
+procedure Pitar3PuntosAzules() {
+     /*
+    Proposito: Pinta 3 puntos de color Azul hacia el este de la celda actual
+    Precondicion: Debe haber al menos 6 celdas hacia el este de la celda actual
+    */
+    Poner(Azul)
+    Poner_ADistancia3Al_(Azul, Este)
+    Poner_ADistancia3Al_(Azul, Este)
+    Mover3VecesAl_(Oeste) 
+    Mover3VecesAl_(Oeste)
+}
+
+procedure Pintar3Puntos_(colorPunto){
+    /*
+    Proposito: Pinta 3 puntos de color **colorPoner** hacia el este de la celda actual
+    Precondicion: Debe haber al menos 6 celdas hacia el este de la celda actual
+    Parametro:**colorPoner** Color del cual se va a pintar
+    */
+    Poner(colorPunto)
+    Poner_ADistancia3Al_(colorPunto, Este)
+    Poner_ADistancia3Al_(colorPunto, Este)
+    Mover3VecesAl_(Oeste) 
+    Mover3VecesAl_(Oeste)
+}
+//Ejercicio 7
+procedure PintarArcoIris(){
+    /*
+    Proposito: Pinta 3 puntos de color **colorPoner** hacia el este de la celda actual
+    Precondicion: Debe haber al menos 8 celdas hacia el este de la celda actual
+    Parametro:**colorPoner** Color del cual se va a pintar
+    */
+    Pintar3Puntos_(Negro)
+    Mover(Este)
+    Pintar3Puntos_(Azul)
+    Mover(Este)
+    Pintar3Puntos_(Rojo)
+    Mover(Oeste)
+    Mover(Norte)
+    Pintar3Puntos_(Verde)
+    Mover(Oeste)
+    Mover(Sur)
+}
+//Ejercicio 8
+procedure Poner_DeColorRojo(cantidadAPoner){
+    /*
+    Propósito:Poner **cantidadAPoner** bolitas de color rojo en la celda actual
+    Precondicion:Ninguna
+    Parametros:**cantidadAPoner** Es la cantidad totoal de cuantas bolitas rojas va a poner en la celda actual
+    */
+    repeat(cantidadAPoner){
+        Poner(Rojo)
+    }
+}
+//Ejercicio 9
+procedure Poner_DeColor_(cantidadAPoner, colorAPoner){
+    /*
+    Propósito:Poner **cantidadAPoner** bolitas de color **colorAPoner** en la celda actual
+    Precondicion:Ninguna
+    Parametros:**cantidadAPoner** Es la cantidad totoal de cuantas bolitas rojas va a poner en la celda actual
+               **colorAPoner** Color del cual se va a poner la bolita en la celda actual    
+    */
+    repeat(cantidadAPoner){
+        Poner(colorAPoner)
+    }
+}
+//Ejercicio 10
+procedure Mover_VecesAl_(cantidadAMover, direccionAMover){
+    /*
+    Propósito:Mover el cabezal **cantidadAMover** celdas hacia la direccion **direccionAMover** de la celda actual
+    Precondicion:Debe existir al menos **cantidadAMover** celdas hacia la direcccion **direccionAMover** de la celda actual
+    Parametros:**cantidadAMover** Es la cantidad totoal de cuantas bolitas rojas va a poner en la celda actual
+               **direccionAMover** Direccion a la cual se va a mover el cabezal    
+    */
+    repeat(cantidadAMover){
+        Mover(direccionAMover)
+    }
+}
+//Ejercicio 11
+procedure  Sacar_DeColor_(cantidadASacar, colorASacar){
+      /*
+    Propósito: Sacar todas las bolitas como **cantidadASacar** del color **colorASacar** haya en la celda actual
+    Precondicion:Debe existir al menos al menos una bolita del color **colorASacar** en la celda actual
+    Parametros:**cantidadASacar** Es la cantidad total de bolitas que se van a sacar 
+               **colorASacar** Color de la bolita del cual se va a sacar
+    */
+    repeat(cantidadaSacar){
+        Sacar(colorASacar)
+    }
+}
+//Ejercicio 12
+procedure IrAEsquinaAl_Y_(primeraDirección,segundaDirección) {
+    /*
+      Proposito: Mover el cabezal hacia una esquina del tablero indicado por la direcciones
+                que se le van a pasar
+      Precondicion:Las direcciones dadas no tien que ser opuestas ni iguales
+      Parametros:**primeraDirección** y **segundaDirección** Es la direccion a donde 
+                 se va a mover el cabezal
+    */
+    IrAlBorde(primeraDirección)
+    IrAlBorde(segundaDirección)
+}
+
+//Ejercicio 13
+procedure EscribirFechaConDía_Mes_Año_(dia, mes, año){
+    /*
+     Proposito:Escribir la fecha con el día **día**, mes **mes** y año **año**.
+     El día se representa con cantidad **día** de bolitas de color Azul;
+            el mes se representa con cantidad **mes** de bolitas de color Rojo; y el año
+            se representa con cantidad **año** de bolitas de color Verde. Estos tres valores
+            se expresan como argumento en ese orden.
+        PARÁMETROS:
+            *día: Es un NÚMERO, y define el día de la fecha
+            *mes: Es un NÚMERO, y define el mes de la fecha
+            *año: Es un NÚMERO, y define el año de la fecha
+        PRECONDICIÓN: Deben haber, al menos, 2 celdas vacías al Este de la posición actual del cabezal.
+    */
+    Poner_DeColor_(dia, Azul)
+    Mover(Este)
+    Poner_DeColor_(mes, Rojo)  
+    Mover(Este)
+    Poner_DeColor_(año, Verde)  
+    Mover_VecesAl_(2,Oeste)
+}
+//Ejercicio 15
+procedure DibujarRelojAnalógicoSimplificadoDeRadio_(radio){
+    /* 
+     Proposito: Dibujar un reloj analogico simplificado con centro en la celda actual
+     donde cada numero se encuentra a **radio** de radio dl centro
+     Precondicion: Debe haber al menos **radio** celdas hacia el norte, sur, este y oeste de la celda actual
+     Parametro:**radio** Es la cantidad de celdas de distancia de la celda actual
+     */
+    DibujarHora12(radio)
+    DibujarHora6(radio)
+    DibujarHora9(radio)
+    DibujarHora3(radio)
+}
+procedure DibujarHora12(radio){
+    /* 
+     Proposito: Dibujar el numero 12 del reloj simplificado de radio **radio** con centro en el cabezal actual
+     Precondicion: Debe haber al menos **radio** celdas hacia el norte de la celda actual
+     Parametro:**radio** Es la cantidad de celdas de distancia de la celda actual hacia el Norte
+     */
+    Mover_VecesAl_(radio, Norte)
+    Poner_DeColor_(12, Rojo)
+    Mover_VecesAl_(radio, Sur)
+}
+procedure DibujarHora6(radio){
+    /* 
+     Proposito: Dibujar el numero 6 del reloj simplificado de radio **radio** con centro en el cabezal actual
+     Precondicion: Debe haber al menos **radio** celdas hacia el Sur de la celda actual
+     Parametro:**radio** Es la cantidad de celdas de distancia de la celda actual hacia el Sur
+     */
+    Mover_VecesAl_(radio, Sur)
+    Poner_DeColor_(6, Rojo)
+    Mover_VecesAl_(radio, Norte)
+}
+procedure DibujarHora9(radio){
+    /* 
+     Proposito: Dibujar el numero 3 del reloj simplificado de radio **radio** con centro en el cabezal actual
+     Precondicion: Debe haber al menos **radio** celdas hacia el Oeste de la celda actual
+     Parametro:**radio** Es la cantidad de celdas de distancia de la celda actual hacia el Oeste
+     */
+    Mover_VecesAl_(radio, Oeste)
+    Poner_DeColor_(9, Rojo)
+    Mover_VecesAl_(radio, Este)
+}
+procedure DibujarHora3(radio){
+    /* 
+     Proposito: Dibujar el numero 3 del reloj simplificado de radio **radio** con centro en el cabezal actual
+     Precondicion: Debe haber al menos **radio** celdas hacia el Este de la celda actual
+     Parametro:**radio** Es la cantidad de celdas de distancia de la celda actual hacia el Este
+     */
+    Mover_VecesAl_(radio, Este)
+    Poner_DeColor_(3, Rojo)
+    Mover_VecesAl_(radio, Oeste)
+}
+//Ejercicio 15
+procedure DibujarLíneaHaciaEl_DeLargo_(direccion,largoDeLinea){
+    /*
+     PROPÓSITO:
+      * Dibuja una línea de longitud **largoDeLaLínea** en dirección **dirección**,
+     dejando el cabezal en la posición inicial.
+     PARÁMETROS:
+      * largoDeLaLínea: Número - La longitud de la línea que se dibuja
+      * dirección : Dirección - La dirección hacia la que se dibuja la línea
+     PRECONDICIONES:
+      * La celda actual está vacía y debe haber al menos **largoDeLaLínea** celdas
+     en dirección dirección.
+    */
+    repeat(largoDeLinea){
+         Poner(Rojo)
+         Mover(direccion)
+    }
+    Mover_VecesAl_(largoDeLinea,opuesto(direccion))
+}
+procedure DibujarInicialM(){
+    DibujarLíneaHaciaEl_DeLargo_(Norte,5)
+    Mover_VecesAl_(2,Norte)
+    DibujarLíneaHaciaEl_DeLargo_(Este,3)
+    Mover_VecesAl_(2,Norte)
+    DibujarLíneaHaciaEl_DeLargo_(Este,3)
+}
+///Ejercicio 18 Bosque
+
+----------------
+procedure DibujarBandaDeLargo_YAncho_DeColor_(largo, ancho, color){
+    /*  PROPÓSITO: Dibujar una banda diagonal de largo **largo**, ancho **ancho**
+            y color **color**; desde la esquina Sudoeste del tablero.
+        PRECONDICIÓN: Hay, al menos, **largo** columnas al Este, y
+            CÓMO DEFINIR CUÁNTAS CELDAS AL NORTE???
+        PARÁMETROS:
+            *largo: NÚMERO. Cantidad de celdas de longitud entre el extremo Este y Oeste
+                de la banda.
+            *ancho: NÚMERO. Cantidad de celdas de alto que tiene la banda en cada punto
+                de su extensión.
+            *color: COLOR. El color de la banda.
+    */
+    repeat(largo - 1){
+        DibujarColumna_De_(color, ancho)
+        MoverDiagonalAl_YAl_(Norte, Este)
+    }
+    DibujarColumna_De_(color, ancho)
+}
+
+procedure DibujarColumna_De_(color, alto){
+    /*  PROPÓSITO: Dibujar una columna de alto **alto**, y de color **color**.
+        PRECONDICIÓN: Hay, al menos, **alto** celdas al Norte de la posición actual del cabezal.
+        PARÁMETROS: 
+            *color: COLOR. El color de la columna.
+            *alto: NÚMERO. Cantidad de celdas de alto que tiene la columna.
+    */
+    repeat(alto - 1){
+        Poner(color)
+        Mover(Norte)
+    }
+    Poner(color)
+   Mover_VecesAl_(alto - 1, Sur)
+}
+procedure MoverDiagonalAl_YAl_(dir1,dir2){
+    Mover(dir1)
+    Mover(dir2)
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
